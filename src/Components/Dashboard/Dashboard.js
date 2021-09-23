@@ -26,7 +26,7 @@ export const Dashboard = ({ socket }) => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      <button onClick={() => handleReload()}>Reload all</button>
+      <button onClick={() => handleReload()} data-testid='reload'>Reload all</button>
       {watchers.map(watcher => {
         return (
           <FileView
@@ -45,4 +45,9 @@ Dashboard.propTypes = {
 };
 
 Dashboard.defaultProps = {
+  socket: {
+    on: (event, cb) => { },
+    off: (event, cb) => { },
+    emit: (event, data) => { }
+  },
 };

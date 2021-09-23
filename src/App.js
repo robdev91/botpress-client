@@ -15,7 +15,7 @@ function App() {
   }, [setSocket]);
 
   return (
-    <div className="App">
+    <div className='App' data-testid='App'>
       {socket ? (
         <Dashboard socket={socket} />
       ) : (

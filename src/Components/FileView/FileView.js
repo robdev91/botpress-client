@@ -172,9 +172,19 @@ export const FileView = ({ socket, watcher }) => {
 };
 
 FileView.propTypes = {
-  socket: PropTypes.object.isRequired
+  socket: PropTypes.object.isRequired,
+  watcher: PropTypes.object.isRequired,
 };
 
 FileView.defaultProps = {
-  socket: null
+  socket: {
+    on: (event, cb) => { },
+    off: (event, cb) => { },
+    emit: (event, data) => { }
+  },
+  watcher: {
+    id: 0,
+    basename: 'services',
+    isDirectory: true,
+  },
 };
