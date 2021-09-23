@@ -1,4 +1,5 @@
 import React from 'react';
+import './FileItem.css';
 
 import { FileIcon } from './FileIcon'
 
@@ -12,15 +13,15 @@ export const FileItem = ({ name, path, isDirectory, isExpanded, parent, children
 
   const iconLabel = () => {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', paddingLeft: `${depth * 8}px`, height: '24px', cursor: 'default', userSelect: 'none' }} onClick={handleClick}>
+      <div className='icon-label' style={{ paddingLeft: `${depth * 8}px` }} onClick={handleClick}>
         {isDirectory
           ?
           isExpanded
             ? <FileIcon icon={faChevronDown} />
             : <FileIcon icon={faChevronRight} />
-          : <div style={{ width: '16px' }}></div>
+          : <div className='icon-spacing'></div>
         }
-        <div style={{ width: '3px' }}></div>
+        <div className='spacing'></div>
         {(!isReady && isExpanded)
           ? <FileIcon icon={faSpinner} />
           : isDirectory
@@ -29,7 +30,7 @@ export const FileItem = ({ name, path, isDirectory, isExpanded, parent, children
               ? <FileIcon icon={faFolderOpen} />
               : <FileIcon icon={faFolder} />
             : <FileIcon icon={faFile} />}
-        <div style={{ width: '3px' }}></div>
+        <div className='spacing'></div>
         <div>{name}</div>
       </div>
     )

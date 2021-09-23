@@ -1,11 +1,12 @@
 import React from 'react';
+import './FileIcon.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const FileIcon = ({ icon }) => {
 
   return (
-    <div style={{width: '16px', display: 'flex', justifyContent: 'center'}}>
+    <div className='file-icon'>
       <FontAwesomeIcon icon={icon} />
     </div>
   );

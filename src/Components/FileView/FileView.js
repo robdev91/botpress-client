@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import './FileView.css';
 
 import { FileItem } from './FileItem'
 
@@ -155,7 +156,7 @@ export const FileView = ({ socket, watcher }) => {
   }, [socket, id, searchElement])
 
   return (
-    <div style={{ flex: '1', width: 'calc(100% - 16px)', overflow: 'auto' }}>
+    <div className='file-view'>
       <FileItem
         name={rootNode.name}
         path={rootNode.path}

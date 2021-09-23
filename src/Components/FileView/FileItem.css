@@ -1,0 +1,15 @@
+.icon-label {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  cursor: default;
+  user-select: none;
+}
+
+.spacing {
+  width: 3px;
+}
+
+.icon-spacing {
+  width: 16px;
+}
